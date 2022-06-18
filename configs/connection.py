@@ -9,12 +9,12 @@ def db_config():
     return dbinfo.Setting()
 
 def DATABASE_URL(
-    connection: str = "postgresql",
+    connection: str = "postgres://qlmasrswywqndr:a015291058aed5a7c55bd51a62b291a6bc8e746969c101d8aff32ad723f680df@ec2-52-73-184-24.compute-1.amazonaws.com:5432/dcv839v8dctfto",
     username: str   = "qlmasrswywqndr",
     password: str   ="a015291058aed5a7c55bd51a62b291a6bc8e746969c101d8aff32ad723f680df",
-    host: str       = "postgres://qlmasrswywqndr:a015291058aed5a7c55bd51a62b291a6bc8e746969c101d8aff32ad723f680df@ec2-52-73-184-24.compute-1.amazonaws.com:5432/dcv839v8dctfto",
+    host: str       = "ec2-52-73-184-24.compute-1.amazonaws.com",
     port: str       = "5432",
-    database: str   = "stream_radios"
+    database: str   = "dcv839v8dctfto"
 ):
     return str(connection+"://"+username+":"+password+"@"+host+":"+port+"/"+database)
 
