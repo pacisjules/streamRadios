@@ -10,9 +10,9 @@ def db_config():
 
 def DATABASE_URL(
     connection: str = "postgresql",
-    username: str   = "pacis",
-    password: str   ="123",
-    host: str       = "127.0.0.1",
+    username: str   = "qlmasrswywqndr",
+    password: str   ="a015291058aed5a7c55bd51a62b291a6bc8e746969c101d8aff32ad723f680df",
+    host: str       = "postgres://qlmasrswywqndr:a015291058aed5a7c55bd51a62b291a6bc8e746969c101d8aff32ad723f680df@ec2-52-73-184-24.compute-1.amazonaws.com:5432/dcv839v8dctfto",
     port: str       = "5432",
     database: str   = "stream_radios"
 ):
