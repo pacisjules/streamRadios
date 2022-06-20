@@ -21,9 +21,9 @@ async def find_allRadio():
 
 # Find Radios with names
 @router.get("/like_Radio/{names}", response_model=Page[model.RadioList])
-async def find_like_Radio(names: str, currentUser: model.RadioList = Depends(util.get_current_active_user)):
+async def find_like_Radio(names: str):
 
-    query = "select * from radios where names like '%{}%'".format(names)
+    query = "select * from radios where radio_name like '%{}%'".format(names)
     res= await database.fetch_all(query=query, values={})
     return paginate(res)
 
