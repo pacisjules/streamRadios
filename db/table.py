@@ -30,7 +30,6 @@ users = sqlalchemy.Table(
     sqlalchemy.Column("last_update_at", sqlalchemy.String),
 )
 
-
 #2 Table Radios
 radios  = sqlalchemy.Table(
     "radios",

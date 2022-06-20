@@ -43,14 +43,12 @@ async def find_Radio_by_id(Radio_id: str, currentUser: model.RadioList = Depends
     return await database.fetch_one(query)
 
 
-
 # Find Radios by country
 @router.get("/all_Radios_by_country/{country}", response_model=Page[model.RadioList])
 async def find_Radios_by_country(country: str, currentUser: model.RadioList = Depends(util.get_current_active_user)):
     query = radios.select().where(radios.c.country == country)
     res = await database.fetch_all(query)
     return paginate(res)
-
 
 
 # Find Radios by status
