@@ -30,8 +30,8 @@ async def find_like_Radio(names: str):
 
 #counting all Radios
 @router.get("/count_Radios")
-async def count_all_count(currentUser: model.RadioList = Depends(util.get_current_active_user)):
-    query = "SELECT COUNT(radio_id) FROM Radio"
+async def count_all_count():
+    query = "SELECT COUNT(radio_id) as numbersRadio FROM radios"
     res= await database.fetch_all(query=query, values={})
     return res
 
