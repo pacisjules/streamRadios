@@ -28,11 +28,10 @@ async def find_like_Radio(names: str):
     return paginate(res)
 
 
-
 #counting all Radios
 @router.get("/count_Radios")
 async def count_all_count(currentUser: model.RadioList = Depends(util.get_current_active_user)):
-    query = "SELECT COUNT(id) FROM Radio"
+    query = "SELECT COUNT(radio_id) FROM Radio"
     res= await database.fetch_all(query=query, values={})
     return res
 
@@ -47,8 +46,8 @@ async def find_Radio_by_id(Radio_id: str, currentUser: model.RadioList = Depends
 
 # Find Radios by country
 @router.get("/all_Radios_by_district/{country}", response_model=Page[model.RadioList])
-async def find_Radios_by_country(district: str, currentUser: model.RadioList = Depends(util.get_current_active_user)):
-    query = radios.select().where(radios.c.country == district)
+async def find_Radios_by_country(country: str, currentUser: model.RadioList = Depends(util.get_current_active_user)):
+    query = radios.select().where(radios.c.country == country)
     res = await database.fetch_all(query)
     return paginate(res)
 
