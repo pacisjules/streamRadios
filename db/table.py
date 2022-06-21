@@ -51,7 +51,24 @@ radios  = sqlalchemy.Table(
 )
 
 
-#3 Table account recovery Keys
+#3 Table Memes
+memes  = sqlalchemy.Table(
+    "memes",
+    metadata,
+    sqlalchemy.Column("id"        , sqlalchemy.String , primary_key=True),
+    sqlalchemy.Column("user_id", sqlalchemy.String, ForeignKey(users.c.id), nullable=False),
+    sqlalchemy.Column("name"  , sqlalchemy.String),
+    sqlalchemy.Column("img"  , sqlalchemy.String),
+    sqlalchemy.Column("text"    , sqlalchemy.String),
+    sqlalchemy.Column("likes_num"    , sqlalchemy.Integer),
+
+    sqlalchemy.Column("status"    , sqlalchemy.String),
+    sqlalchemy.Column("created_at", sqlalchemy.String),
+    sqlalchemy.Column("last_update_at", sqlalchemy.String),
+)
+
+
+#4 Table account recovery Keys
 account_keys  = sqlalchemy.Table(
     "account_keys",
     metadata,
